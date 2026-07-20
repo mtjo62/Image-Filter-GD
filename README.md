@@ -59,20 +59,20 @@ For a standalone img tag
 
 Usage: 
 
-<img src="http://mysite.com/path/to/imageFilter.php?file=http://mysite.com/path/to/image.png&filter=sharpen" alt="">
+`<img src="http://mysite.com/path/to/imageFilter.php?file=http://mysite.com/path/to/image.png&filter=sharpen" alt="">`
 
 *********************************************************************************
 Using the image_filter.js file with a class name filter and a data attribute as the effect filter
 
 Note: See filter.html for working example
 
-Open image_filter.js and edit the url variable to: http://mysite.com/path/to/imageFilter.php
+Open image_filter.js and edit the url variable to: `http://mysite.com/path/to/imageFilter.php`
 
 Add the following script include to the footer of your page or template:
 
-<script src="http://mysite.com/path/to/image_filter.js"></script>
+`<script src="http://mysite.com/path/to/image_filter.js"></script>`
 
 Usage:
 
-<img src="http://mysite.com/path/to/image.png" class="filter-gd" data-filter="sharpen" alt=""> 
+`<img src="http://mysite.com/path/to/image.png" class="filter-gd" data-filter="sharpen" alt="">` 
 
