@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Filters</title>
+<meta charset="utf-8">
+<style type="text/css">
+<!--
+body { font-family: arial, sans-serif; padding: 6rem; background: #fff; }
+img { border: 0; }
+-->
+</style>
+</head>
+<body>
+<h1>Image Filter GD Demo</h1>
+<p>This demo HTML page uses the Javascript getElementsByClassname object to sort and effect images with the filter classname. The alt attribute is used to select the filter. This demo page passes the W3C HTML5 validation. The last example shows the place holder image displayed for an invalid image URL or an invalid/mispelled filter.</p>
+<hr>
+<h3>Requirements</h3>
+<p>
+PHP 7.2+ with bundled GD<br>
+fopen wrapper On or cURL extension enabled
+</p>
+<hr>
+<h3>Effects Filters Supported</h3>
+<p>
+<b>brighten:</b> Lightens a darker image.<br>
+<b>brush:</b> Adds a slight dabbed, brushed effect to an image.<br>
+<b>darken:</b> Darkens an overly bright image.<br>
+<b>edgedetect:</b> Highlights borders between colors on an image. Similar to emboss.<br>
+<b>emboss:</b> Adds a stamped metal effect to an image.<br>
+<b>flip:</b> Flips an image vertically.<br>
+<b>grayscale:</b> Converts color image to black & white.<br>
+<b>larger:</b> Resizes an image by 2x.<br>
+<b>mirror:</b> Produces a mirrored reflection of an image.<br>
+<b>negative:</b> Produces a photo negative of an image.<br>
+<b>pixelate:</b> Pixilates an image.<br>
+<b>sephia:</b> Adds an aged photo effect to an image.<br>
+<b>sharpen:</b> Sharpens an blurred image.<br>
+<b>sketch:</b> Adds a sketched, comic book effect to an image.<br>
+<b>smaller:</b> Reduces an image by 2x.<br>
+<b>smooth:</b> Slightly blurs an overly sharpened image.
+</p>
+<hr>
+<img src="robot.jpg" class="filter-gd" data-filter="mirror" alt=""><br>
+<code>&lt;img src="robot.jpg" class="filter-gd" data-filter="mirror"&gt;</code>
+<hr>
+<img src="imageFilter.php?file=robot.jpg&filter=brush" alt=""><br>
+<code>&lt;img src="imageFilter.php?file=robot.jpg&amp;filter=brush" alt=""&gt;</code>
+<hr>
+<h3>The Javascript</h3>
+<pre>
+let imgUrl = "https://path/to/imageFilter.php";
+
+window.addEventListener("load", filterImage(), false);
+
+function filterImage() {
+    const imgfilter = document.getElementsByClassName("filter-gd");
+
+    for (i = 0; i &lt; imgfilter.length; i++) {
+      const imgEffect = imgfilter[i].getAttribute("data-filter")
+      const imgSrc = imgfilter[i].getAttribute("src");
+      imgfilter[i].setAttribute("src", imgUrl + "?file=" + imgSrc + "&amp;filter=" + imgEffect);
+    }
+}
+</pre>
+<script src="image_filter.js"></script>
+</body>
+</html>
